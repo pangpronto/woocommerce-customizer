@@ -469,7 +469,7 @@ class WC_Customizer {
 	 * @param string $text cart button text to translate
 	 * @param string $translation translated text
 	 * @param string $domain text domain. Unique identifier for retrieving translated strings
-	 * @return string translated text fromt its filters
+	 * @return string translated text from its filters
 	 */
 	public function customize_return_to_shop_text( $translation, $text, $domain ) {
 
