@@ -292,7 +292,7 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 					),
 
 					array(
-						'id'       => 'single_out_of_stock_text',
+						'id'       => 'single_out_of_stock_textsingle_out_of_stock_text',
 						'title'    => __( 'Out of Stock text', 'woocommerce-customizer' ),
 						'desc_tip' => __( 'Changes text for the out of stock on product pages. Default: "Out of stock"', 'woocommerce-customizer' ),
 						'type'     => 'text',
@@ -426,6 +426,20 @@ class WC_Customizer_Settings extends WC_Settings_Page {
 						'id'       => 'woocommerce_placeholder_img_src',
 						'title'    => __( 'Placeholder Image source', 'woocommerce-customizer' ),
 						'desc_tip' => __( 'Change the default placeholder image by setting this to a valid image URL', 'woocommerce-customizer' ),
+						'type'     => 'text'
+					),
+
+					array( 'type' => 'sectionend' ),
+
+					array(
+						'title' => __( 'Cart Button', 'woocommerce-customizer' ),
+						'type'  => 'title'
+					),
+
+					array(
+						'id'       => 'woocommerce_return_to_shop_button',
+						'title'    => __( 'Empty Cart', 'woocommerce-customizer' ),
+						'desc_tip' => __( 'Change the cart button text for empty cart page', 'woocommerce-customizer' ),
 						'type'     => 'text'
 					),
 

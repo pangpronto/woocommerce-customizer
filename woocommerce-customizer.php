@@ -216,6 +216,10 @@ class WC_Customizer {
 
 					add_filter( 'woocommerce_get_availability_text', array( $this, 'customize_single_backorder_text' ), 50, 2 );
 
+				} elseif ( 'woocommerce_return_to_shop_button' === $filter_name ) {
+
+					add_filter( 'gettext', array( $this, 'customize_return_to_shop_text' ), 50 );
+
 				} else {
 
 					add_filter( $filter_name, array( $this, 'customize' ), 50 );
@@ -454,6 +458,28 @@ class WC_Customizer {
 		}
 
 		return $text;
+	}
+
+
+	/**
+	 * Apply the cart button text customization
+	 *
+	 * @since 2.6.0
+	 *
+	 * @param string $text cart button text to translate
+	 * @param string $translation translated text
+	 * @param string $domain text domain. Unique identifier for retrieving translated strings
+	 * @return string translated text fromt its filters
+	 */
+	public function customize_return_to_shop_text( $translation, $text, $domain ) {
+
+		if ( 'woocommerce' == $domain && 'Return to shop' == $text )  {
+			if ( isset( $this->filters['woocommerce_return_to_shop_button'] ) ) {
+				$translation = $this->filters['woocommerce_return_to_shop_button'];
+			}
+		}
+
+		return $translation;
 	}
 
 
